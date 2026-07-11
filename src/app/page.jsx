@@ -9,10 +9,21 @@ import ActivityCarouselSection from "../components/ActivityCarouselSection";
 export default function HomePage() {
   const { favoriteIds, toggleFavorite } = useAppState();
 
+  const categoryOrder = ["Adventure", "Culture", "Food", "Wellness", "Nature"];
+
   const destinations = useMemo(() => {
     const uniqueDestinations = [...new Set(experiencesData.map((item) => item.destination))];
     return uniqueDestinations.slice(0, 6);
   }, []);
+
+  const categorySections = useMemo(
+    () =>
+      categoryOrder.map((category) => ({
+        category,
+        items: experiencesData.filter((item) => item.category === category),
+      })),
+    [],
+  );
 
   return (
     <div className="page-stack">
@@ -46,19 +57,15 @@ export default function HomePage() {
         </div>
       </section>
 
-      <ActivityCarouselSection
-        title="Go beyond the guidebook"
-        items={experiencesData.slice(0, 9)}
-        favoriteIds={favoriteIds}
-        onToggleFavorite={toggleFavorite}
-      />
-
-      <ActivityCarouselSection
-        title="Adventures to plan your trip around"
-        items={experiencesData.slice(9, 18)}
-        favoriteIds={favoriteIds}
-        onToggleFavorite={toggleFavorite}
-      />
+      {categorySections.map(({ category, items }) => (
+        <ActivityCarouselSection
+          key={category}
+          title={category}
+          items={items}
+          favoriteIds={favoriteIds}
+          onToggleFavorite={toggleFavorite}
+        />
+      ))}
     </div>
   );
 }

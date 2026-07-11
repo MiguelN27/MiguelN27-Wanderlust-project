@@ -329,6 +329,20 @@ img {
   padding: 1rem;
 }
 
+.category-carousel-track {
+  margin-top: 0.75rem;
+  display: flex;
+  gap: 0.9rem;
+  overflow-x: auto;
+  padding-bottom: 0.25rem;
+  scrollbar-width: thin;
+}
+
+.category-carousel-item {
+  flex: 0 0 min(280px, calc((100% - 2.7rem) / 4));
+  min-width: 240px;
+}
+
 .filter-bar-shell {
   display: grid;
   gap: 0.65rem;
