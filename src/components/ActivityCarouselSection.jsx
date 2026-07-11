@@ -6,7 +6,7 @@ import CarouselNavButton from "./CarouselNavButton";
 
 export default function ActivityCarouselSection({ title, items, favoriteIds, onToggleFavorite }) {
   const [pageIndex, setPageIndex] = useState(0);
-  const pageSize = 3;
+  const pageSize = 4;
 
   const pages = useMemo(() => {
     const chunks = [];
@@ -25,7 +25,7 @@ export default function ActivityCarouselSection({ title, items, favoriteIds, onT
   return (
     <section className="activity-carousel-section">
       <div className="section-heading-row">
-        <h2>{title}</h2>
+        <h2 className="section-title">{title}</h2>
         <div className="section-controls">
           <CarouselNavButton
             direction="left"

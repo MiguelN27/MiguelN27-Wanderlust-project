@@ -74,17 +74,14 @@ export default function ExperiencesExplorer() {
   });
 
   return (
-    <section className="page-stack">
-      <div className="section-heading-row">
-        <h1>Explore Experiences</h1>
-        <p>{filteredExperiences.length} matching results</p>
-      </div>
-
+    <section className="page-stack explorer-page">
       <SearchBar
         value={search}
         onChange={setSearch}
         onSubmit={handleSearchSubmit}
         placeholder="Search by experience title"
+        showLeadingChip={false}
+        className="explorer-search"
       />
 
       <FilterBar

@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import ExperienceCard from "../../components/ExperienceCard";
 import { useAppState } from "../../lib/app-state";
 
@@ -8,10 +9,19 @@ export default function FavoritesPage() {
 
   return (
     <section className="page-stack">
-      <h1>Your Favorites</h1>
+      <header className="panel-header">
+        <p className="hero-kicker">Wishlist</p>
+        <h1>Your saved experiences</h1>
+        <p>{favorites.length} experiences currently in your list.</p>
+      </header>
 
       {favorites.length === 0 ? (
-        <p className="no-results">You have no saved experiences yet.</p>
+        <div className="no-results">
+          <p>You have no saved experiences yet.</p>
+          <Link className="cta-button" href="/experiences">
+            Explore experiences
+          </Link>
+        </div>
       ) : (
         <div className="experience-grid">
           {favorites.map((experience) => (

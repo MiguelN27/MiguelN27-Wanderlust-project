@@ -7,12 +7,19 @@ export default function ProfilePage() {
 
   return (
     <section className="profile-page">
-      <h1>Traveler Profile</h1>
-      <p className="eyebrow">@explore.with.mia</p>
-      <p>
-        Adventure-focused traveler interested in food culture, hidden nature trails, and local-led
-        city stories.
-      </p>
+      <header className="profile-hero">
+        <div className="profile-avatar" aria-hidden="true">
+          MN
+        </div>
+        <div>
+          <h1>Traveler Profile</h1>
+          <p className="eyebrow">@explore.with.mia</p>
+          <p>
+            Adventure-focused traveler interested in food culture, hidden nature trails, and
+            local-led city stories.
+          </p>
+        </div>
+      </header>
 
       <div className="profile-summary">
         <article>
@@ -26,6 +33,10 @@ export default function ProfilePage() {
         <article>
           <h2>Next Destination</h2>
           <p>Lisbon, Portugal</p>
+        </article>
+        <article>
+          <h2>Travel Style</h2>
+          <p>Small groups and local-led activities</p>
         </article>
       </div>
     </section>

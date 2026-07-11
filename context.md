@@ -70,3 +70,16 @@ A frontend multi-page application built with React/Next.js where users can brows
 # Dataset and State
 
 - All state must live in React's built-in `useState` and be passed via props or custom hooks.
+
+## Design references
+The next pages are UI and Design references for all accross the page:
+![Guide for Main Page](../MiguelN27-Wanderlust-project/src/img/guide-for-main-page.png)
+![Guide for Detail Page](../MiguelN27-Wanderlust-project/src/img/guide-for-detail-page.png)
+![Experience Guiding Page](../MiguelN27-Wanderlust-project/src/img/experience-guiding-page.png)
+
+- Color Scheme:
+    - Background color: whitesmoke #F2F2F2
+	- Primary color: Sober red #E42E36
+	- Secondary color: Smooth gray #BFB6B0
+	- Accent color: #D85B5B
+- Take the images mentioned on this are as a reference for the organization and look of the UI that and then apply it with the measures of the components
