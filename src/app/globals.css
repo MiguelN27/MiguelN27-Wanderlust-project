@@ -1,0 +1,382 @@
+@import url("https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&family=Manrope:wght@400;600;700&display=swap");
+
+:root {
+  --bg: #f7f4ea;
+  --ink: #1e212b;
+  --accent: #ca5a3a;
+  --accent-soft: #f8d6c3;
+  --surface: #ffffff;
+  --line: #e5dcc8;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: radial-gradient(circle at 10% 10%, #fff4da 0%, var(--bg) 60%);
+  color: var(--ink);
+  font-family: "Manrope", sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  background: rgba(247, 244, 234, 0.95);
+  border-bottom: 1px solid var(--line);
+  backdrop-filter: blur(8px);
+}
+
+.site-header-inner {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 1rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.85rem;
+}
+
+.header-brand-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.9rem;
+}
+
+.site-logo {
+  font-family: "Sora", sans-serif;
+  font-size: 1.35rem;
+  font-weight: 700;
+}
+
+.header-links {
+  display: flex;
+  gap: 0.9rem;
+}
+
+.header-links a {
+  padding: 0.35rem 0.6rem;
+  border-radius: 999px;
+}
+
+.header-links a.is-active {
+  background: var(--ink);
+  color: #ffffff;
+}
+
+.search-bar {
+  display: flex;
+  gap: 0.6rem;
+  border: 1px solid var(--line);
+  background: var(--surface);
+  border-radius: 999px;
+  padding: 0.35rem;
+}
+
+.search-bar input {
+  flex: 1;
+  border: 0;
+  outline: none;
+  background: transparent;
+  padding: 0.45rem 0.8rem;
+}
+
+.search-bar button,
+.cta-button,
+.header-nav-actions button,
+.header-nav-actions a,
+.carousel-nav-button,
+.favorite-button {
+  border: 0;
+  cursor: pointer;
+  border-radius: 999px;
+  transition: transform 0.2s ease;
+}
+
+.search-bar button,
+.cta-button {
+  background: var(--accent);
+  color: #ffffff;
+  padding: 0.5rem 0.95rem;
+}
+
+.search-bar button:hover,
+.cta-button:hover,
+.carousel-nav-button:hover,
+.favorite-button:hover {
+  transform: translateY(-1px);
+}
+
+.header-nav-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.header-nav-actions button,
+.header-nav-actions a {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  padding: 0.4rem 0.75rem;
+}
+
+.page-shell {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 1.25rem 1rem 2.5rem;
+}
+
+.page-stack {
+  display: grid;
+  gap: 1.2rem;
+}
+
+.hero {
+  background: linear-gradient(120deg, #f4dcc7 0%, #fdf7ef 65%);
+  border: 1px solid var(--line);
+  border-radius: 22px;
+  padding: 1.5rem;
+}
+
+.hero h1,
+h1,
+h2,
+h3 {
+  font-family: "Sora", sans-serif;
+}
+
+.hero h1 {
+  margin: 0.3rem 0 0.75rem;
+  font-size: clamp(1.7rem, 5vw, 2.7rem);
+}
+
+.hero-kicker,
+.eyebrow {
+  color: #5d646f;
+  font-weight: 600;
+  margin: 0;
+}
+
+.section-heading-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.section-controls {
+  display: flex;
+  gap: 0.45rem;
+}
+
+.carousel-nav-button {
+  width: 2.2rem;
+  height: 2.2rem;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  font-size: 1.25rem;
+}
+
+.carousel-nav-button:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.filter-bar {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.7rem;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 0.8rem;
+}
+
+.filter-bar label {
+  display: grid;
+  gap: 0.3rem;
+  font-size: 0.95rem;
+}
+
+.filter-bar select {
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 0.5rem;
+  background: #fffdfa;
+}
+
+.experience-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+.experience-card {
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  overflow: hidden;
+  background: var(--surface);
+}
+
+.experience-media {
+  position: relative;
+}
+
+.experience-media img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+.favorite-button {
+  position: absolute;
+  right: 0.7rem;
+  top: 0.7rem;
+  width: 2rem;
+  height: 2rem;
+  font-size: 1rem;
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid var(--line);
+}
+
+.favorite-button.is-active {
+  background: #fee2db;
+  color: #9d2f13;
+}
+
+.experience-content {
+  padding: 0.95rem;
+  display: grid;
+  gap: 0.6rem;
+}
+
+.experience-content h3,
+.experience-content p {
+  margin: 0;
+}
+
+.experience-content a {
+  font-weight: 600;
+  color: #7f2f1a;
+}
+
+.experience-meta {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}
+
+.detail-page {
+  display: grid;
+  gap: 1rem;
+}
+
+.detail-image {
+  width: 100%;
+  max-height: 400px;
+  object-fit: cover;
+  border-radius: 20px;
+  border: 1px solid var(--line);
+}
+
+.detail-content {
+  border: 1px solid var(--line);
+  background: var(--surface);
+  border-radius: 20px;
+  padding: 1rem;
+  display: grid;
+  gap: 0.75rem;
+}
+
+.detail-meta {
+  display: grid;
+  gap: 0.2rem;
+}
+
+.profile-page {
+  display: grid;
+  gap: 1rem;
+}
+
+.profile-summary {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 0.8rem;
+}
+
+.profile-summary article {
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: var(--surface);
+  padding: 0.95rem;
+}
+
+.profile-summary article h2,
+.profile-summary article p {
+  margin: 0;
+}
+
+.no-results {
+  border: 1px dashed #bead8f;
+  border-radius: 14px;
+  padding: 1rem;
+  background: #fff9ef;
+}
+
+@media (min-width: 760px) {
+  .site-header-inner {
+    grid-template-columns: 1fr;
+  }
+
+  .filter-bar {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .experience-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1024px) {
+  .site-header-inner {
+    grid-template-columns: 1fr auto;
+    grid-template-areas:
+      "brand actions"
+      "search search";
+    align-items: center;
+  }
+
+  .header-brand-row {
+    grid-area: brand;
+  }
+
+  .search-bar {
+    grid-area: search;
+  }
+
+  .header-nav-actions {
+    grid-area: actions;
+    justify-self: end;
+  }
+
+  .experience-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}

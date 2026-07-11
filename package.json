@@ -4,13 +4,16 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "start": "vite",
-    "build": "vite build",
+    "dev": "next dev",
+    "start": "next dev",
+    "build": "next build",
+    "serve": "next start",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview"
+    "preview": "next start"
   },
   "dependencies": {
     "bootstrap": "^5.2.2",
+    "next": "^15.2.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
