@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import ExperienceCard from "../../components/ExperienceCard";
+import PaginatedExperienceGrid from "../../components/PaginatedExperienceGrid";
 import { useAppState } from "../../lib/app-state";
 
 export default function FavoritesPage() {
@@ -23,16 +23,12 @@ export default function FavoritesPage() {
           </Link>
         </div>
       ) : (
-        <div className="experience-grid">
-          {favorites.map((experience) => (
-            <ExperienceCard
-              key={experience.id}
-              experience={experience}
-              isFavorite={favoriteIds.includes(experience.id)}
-              onToggleFavorite={toggleFavorite}
-            />
-          ))}
-        </div>
+        <PaginatedExperienceGrid
+          items={favorites}
+          favoriteIds={favoriteIds}
+          onToggleFavorite={toggleFavorite}
+          pageSize={30}
+        />
       )}
     </section>
   );

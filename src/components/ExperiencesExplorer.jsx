@@ -4,7 +4,7 @@ import { useEffect, useMemo, useState } from "react";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import SearchBar from "./SearchBar";
 import FilterBar from "./FilterBar";
-import ExperienceCard from "./ExperienceCard";
+import PaginatedExperienceGrid from "./PaginatedExperienceGrid";
 import { experiencesData } from "../data/experiences";
 import { useAppState } from "../lib/app-state";
 import { matchesSearch } from "../lib/filter-utils";
@@ -96,16 +96,12 @@ export default function ExperiencesExplorer() {
       {filteredExperiences.length === 0 ? (
         <p className="no-results">No results found for your current filters.</p>
       ) : (
-        <div className="experience-grid">
-          {filteredExperiences.map((experience) => (
-            <ExperienceCard
-              key={experience.id}
-              experience={experience}
-              isFavorite={favoriteIds.includes(experience.id)}
-              onToggleFavorite={toggleFavorite}
-            />
-          ))}
-        </div>
+        <PaginatedExperienceGrid
+          items={filteredExperiences}
+          favoriteIds={favoriteIds}
+          onToggleFavorite={toggleFavorite}
+          pageSize={30}
+        />
       )}
     </section>
   );

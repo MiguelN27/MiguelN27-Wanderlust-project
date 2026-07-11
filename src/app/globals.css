@@ -399,6 +399,17 @@ img {
   gap: 0.9rem;
 }
 
+.view-more-row {
+  display: flex;
+  justify-content: center;
+  margin-top: 0.6rem;
+}
+
+.view-more-button {
+  min-width: 150px;
+  justify-content: center;
+}
+
 .experience-card {
   background: #fff;
   border: 1px solid #e6dfd8;
