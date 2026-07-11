@@ -1,5 +1,6 @@
 import "./globals.css";
 import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 import { AppStateProvider } from "../lib/app-state";
 
 export const metadata = {
@@ -14,6 +15,7 @@ export default function RootLayout({ children }) {
         <AppStateProvider>
           <Navbar />
           <main className="page-shell">{children}</main>
+          <Footer />
         </AppStateProvider>
       </body>
     </html>
